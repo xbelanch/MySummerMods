@@ -9,3 +9,4 @@
 * [dnSpy](https://github.com/0xd4d/dnSpy): A debugger and .NET assembly editor. You can use it to edit and debug assemblies even if you don't have any source code available.
 * [uTinyRipper](https://github.com/mafaca/UtinyRipper): Tool for extracting assets from serialized files (CAB-, *.assets, *.sharedAssets, etc.) and assets bundles (.unity3d, *.assetbundle, etc.) and conveting them into native Engine format.
 * [Developer Toolset II](https://www.nexusmods.com/mysummercar/mods/345): A mod tool designed to give you a detailed overview of all objects, components and variables the game uses.
+* [Visual Studio Code](https://code.visualstudio.com/): as main code editor. Works pretty well and better on Windows than Emacs.
