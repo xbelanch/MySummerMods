@@ -24,3 +24,31 @@ $ dotnet new sln
 $ dotnet new classlib -o sample
 $ dotnet sln add sample\sample.csproj
 ```
+
+## Notes
+
+Add this script at *Properties/Build Events/Post-build* event command line:
+
+```cmd
+if "$(ConfigurationName)" == "Debug" (
+    copy "$(TargetPath)" "path to mods folder" /y
+    copy "$(TargetDir)$(TargetName).pdb" "path to mods folder\$(TargetName).pdb" /y
+    cd "path to mods folder"
+    call "path to mods folder\debug.bat"
+) ELSE (
+    copy "$(TargetPath)" "path to mods folder" /y
+) 
+```
+
+When we build the project solution it will raise an error. We need to add the absolute path to execute the `pdb2mdb` binary:
+
+```cmd
+@echo off
+for %%f in (*.pdb) do (
+	if EXIST %%~nf.dll (
+		echo Converting: %%f
+		"C:\Program Files (x86)\Steam\steamapps\common\My Summer Car\Mods\pdb2mdb.exe %%~nf.dll"
+	)
+)
+exit
+```

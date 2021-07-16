@@ -1,5 +1,7 @@
 # Tools
 
+List of tools you'll need to develop mods for My Summer Car. Don't hesitate for opening an issue to suggest a tool not included on that list.
+
 * [Unity 5.0.0f4 (64-bit)](https://unity3d.com/get-unity/download/archive): self explanatory.
 * [Mod Loader Pro](https://mscloaderpro.github.io/): A mod loader for My Summer Car.
 * [MSCEditor](https://www.nexusmods.com/mysummercar/mods/8): MSCEditor is a save-file editor for My Summer Car. It enables the user to modify their save-files as they please. Common use cases include teleporting objects, cheating in money and diagnosing problems with your car. 
@@ -10,3 +12,5 @@
 * [uTinyRipper](https://github.com/mafaca/UtinyRipper): Tool for extracting assets from serialized files (CAB-, *.assets, *.sharedAssets, etc.) and assets bundles (.unity3d, *.assetbundle, etc.) and conveting them into native Engine format.
 * [Developer Toolset II](https://www.nexusmods.com/mysummercar/mods/345): A mod tool designed to give you a detailed overview of all objects, components and variables the game uses.
 * [Visual Studio Code](https://code.visualstudio.com/): as main code editor. Works pretty well and better on Windows than Emacs.
+* [Microsoft Visual Studio 2017 or 2019 Community](https://visualstudio.microsoft.com/es/vs/community/): As I said that's the ide recommended for the Mod Loader Pro developer team.
+
