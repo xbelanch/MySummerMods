@@ -25,6 +25,11 @@ $ dotnet new classlib -o sample
 $ dotnet sln add sample\sample.csproj
 ```
 
+Check it out these references I found helpfulness:
+
+* [How YOU can get started with .NET Core and C# in VS Code](https://softchris.github.io/pages/dotnet-core.html#resources).
+* [Cannot find reference assemblies for .NET 3.5 or lower using core msbuild](https://github.com/dotnet/msbuild/issues/1333).
+
 ## Notes
 
 Add this script at *Properties/Build Events/Post-build* event command line:
