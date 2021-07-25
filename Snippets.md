@@ -27,11 +27,15 @@ Thanks to [OneSidedDie](https://www.reddit.com/user/OneSidedDie/) for the [solut
 ``` c#
 GameObject _electricLightBedroom2 = GameObject.Find("YARD/Building/Dynamics/HouseElectricity/ElectricAppliances/Bedroom2");
             _electricLightBedroom2.SetActive(true);
+
+PlayMakerFSM _switch_bedroom2 = GameObject.Find("YARD/Building/Dynamics/LightSwitches/switch_bedroom2").GetComponent<PlayMakerFSM>();
+var _switch = _switch_bedroom2.FsmVariables.GetFsmBool("Switch");
+_switch.Value = true; // This fix that light switch off when cursor hover the light switch
 ```
 
 You can easily translate this to the other lights of the house.
 
-// TODO: How to emulate the switch being pressed.
+// TODO: How to emulate the switch has been pressed when is active??
 
 ## Switch on the TV
 
