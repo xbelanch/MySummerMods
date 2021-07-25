@@ -2,3 +2,4 @@
 
 * [Guide](./Guide.md)
 * [Tools](./Tools.md)
+* [Snippets](./Snippets.md)
