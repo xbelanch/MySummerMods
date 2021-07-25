@@ -19,3 +19,22 @@ ModConsole.Log("_handleDoor: " + _handleDoor);
 _handleDoor.Value = true;
 ModConsole.Log("_handleDoor: " + _handleDoor);
 ```
+## Switch on the lights
+
+Thanks to [OneSidedDie](https://www.reddit.com/user/OneSidedDie/) for the [solution](https://www.reddit.com/r/MySummerCar/comments/opq2xt/switch_on_the_bedroom_light/
+).
+
+``` c#
+GameObject _electricLightBedroom2 = GameObject.Find("YARD/Building/Dynamics/HouseElectricity/ElectricAppliances/Bedroom2");
+            _electricLightBedroom2.SetActive(true);
+```
+
+You can easily translate this to the other lights of the house.
+
+// TODO: How to emulate the switch being pressed.
+
+## Switch on the TV
+
+``` c#
+GameObject.Find("YARD/Building/LIVINGROOM/TV/Switch").GetComponent<PlayMakerFSM>().FsmVariables.FindFsmBool("Open").Value = true;
+```
