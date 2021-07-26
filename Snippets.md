@@ -35,7 +35,10 @@ _switch.Value = true; // This fix that light switch off when cursor hover the li
 
 You can easily translate this to the other lights of the house.
 
-// TODO: How to emulate the switch has been pressed when is active??
+``` c#
+GameObject _light_switch_button = GameObject.Find("YARD/Building/Dynamics/LightSwitches/switch_bedroom2/light_switch/light_switch_button");
+_light_switch_button.transform.localEulerAngles = new Vector3(348, 0, 0);
+```
 
 ## Switch on the TV
 
