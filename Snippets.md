@@ -40,8 +40,23 @@ GameObject _light_switch_button = GameObject.Find("YARD/Building/Dynamics/LightS
 _light_switch_button.transform.localEulerAngles = new Vector3(348, 0, 0);
 ```
 
-## Switch on the TV
+## Change the color of the light
+
+Called once, when mod is loading after game is fully loaded. Bedroom light or set color to red.
 
 ``` c#
+GameObject _lightBedroom2 = GameObject.Find("YARD/Building/Dynamics/HouseElectricity/ElectricAppliances/Bedroom2/LightBedroom2");
+_lightBedroom2.GetComponent<Light>().enabled = true;
+_lightBedroom2.GetComponent<Light>().color = new Color { r = 1, b = 0, g = 0, a = 0.5f };
+```
+
+## Switch on/off the TV
+
+``` c#
+// Switch on
 GameObject.Find("YARD/Building/LIVINGROOM/TV/Switch").GetComponent<PlayMakerFSM>().FsmVariables.FindFsmBool("Open").Value = true;
+// Switch off
+_switchTV.FsmVariables.FindFsmBool("Open").Value = false;
+_switchTV.SendEvent("GLOBALEVENT");
+
 ```
