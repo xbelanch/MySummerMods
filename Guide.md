@@ -42,7 +42,7 @@ if "$(ConfigurationName)" == "Debug" (
     call "path to mods folder\debug.bat"
 ) ELSE (
     copy "$(TargetPath)" "path to mods folder" /y
-) 
+)
 ```
 
 When we build the project solution it will raise an error. We need to add the absolute path to execute the `pdb2mdb` binary:

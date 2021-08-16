@@ -60,3 +60,42 @@ _switchTV.FsmVariables.FindFsmBool("Open").Value = false;
 _switchTV.SendEvent("GLOBALEVENT");
 
 ```
+
+## Change text and color of menu buttons
+
+``` c#
+public override void MenuOnLoad() {
+
+    GameObject quitButton = Resources.FindObjectsOfTypeAll<GameObject>().First(gobj => gobj.name == "ButtonQuit");
+    quitButton.transform.GetChild(0).GetComponent<TextMesh>().text = "Surt";
+        quitButton.transform.GetChild(0).GetComponent<MeshRenderer>().materials.First().color = new Color(1f, 0f, 1f, 1f);
+    quitButton.transform.GetChild(0).GetComponent<TextMesh>().color = new Color(1f, 0f, 1f, 1f); // Magenta!
+    quitButton.transform.GetChild(0).GetChild(0).GetComponent<TextMesh>().text = "Surt";
+    quitButton.transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().materials.First().color = new Color(0f, 1f, 0f, 1f);
+    quitButton.transform.GetChild(0).GetChild(0).GetComponent<TextMesh>().color = new Color(0f, 1f, 0f, 1f); // Green!
+
+    }
+```
+
+## Change MSC Logo
+
+Note: you must put `logo.png` on the assets mod folder.
+
+``` c#
+public override void MenuOnLoad()
+{
+base.MenuOnLoad();
+
+var path = ModLoader.GetModAssetsFolder(this);
+Texture2D tLogo = new Texture2D(512, 512);
+ModConsole.Log("Path: " + path);
+tLogo = ModAssets.LoadTexturePNG(path + "\\logo.png");
+
+// Change official logo for a creeppy new one
+
+GameObject logo = Resources.FindObjectsOfTypeAll<GameObject>().First(gObj => gObj.name == "LOGO");
+            logo.transform.localScale = new Vector3(6f, 6f, 6f);
+    logo.transform.GetChild(0).GetComponent<MeshRenderer>().materials.First().mainTexture = tLogo;
+```
+
+// TODO: Change the main menu scene
